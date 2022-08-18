@@ -14,6 +14,9 @@ Examples
 
 function postpone(cb, delay) {
   // Your code here
+  return function () {
+    setTimeout(cb, delay);
+  };
 }
 const sayHello = () => console.log("hi");
 const slowHello = postpone(sayHello, 1000);
